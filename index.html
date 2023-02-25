@@ -7,7 +7,8 @@
     <title>Девайс</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico"/>
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="styles/styles.css"/>
   </head>
 <body>
   <!-- Шапка -->
@@ -134,15 +135,15 @@
   <main class="main-container main-index">
     <div class="page-container container-slider">
       <h1 class="visually-hidden">Интернет-магазин Device.</h1>
-      <section class="slider">
+      <section class="slider swiper">
         <h2 class="visually-hidden">Популярные товары.</h2>
-        <button class="slider-button-left link-states" type="button">
+        <button class="slider-button-left link-states swiper-button-prev" type="button">
           <span class="visually-hidden">Стрелка назад.</span>
         </button>
 
         <!-- Первый слайд -->
-        <ol class="slider-list">
-          <li class="slider-item">
+        <ol class="slider-list swiper-wrapper">
+          <li class="slider-item swiper-slide">
             <img class="slider-img" src="images/index/slider-one.png" width="560" height="560" alt="Черный квадрокоптер с белым корпусом, внизу которого от прикрепленной камеры исходит красный луч."/>
             <div class="holder-slider slider-one">
               <h2 class="title title-slider">Порхает как бабочка, жалит как пчела!</h2>
@@ -162,7 +163,7 @@
           </li>
 
           <!-- Второй слайд -->
-          <li class="slider-item hidden">
+          <li class="slider-item swiper-slide">
             <img class="slider-img-two" src="images/index/slider-two.png" width="560" height="560" alt="Тонкий черный фитнес-браслет, имеющий маленький сенсорный экран." />
             <div class="holder-slider slider-two">
               <h2 class="title title-slider">Худеем <br> правильно!</h2>
@@ -180,7 +181,7 @@
           </li>
 
           <!-- Третий слайд -->
-          <li class="slider-item hidden">
+          <li class="slider-item swiper-slide">
             <img class="slider-img-two" src="images/index/slider-three.png" width="560" height="560" alt="Черная палка для селфи, которая имеет синий вставки на лапах."/>
             <div class="holder-slider slider-three">
               <h2 class="title title-slider">Делай селфи, <br> как Бен Стиллер!</h2>
@@ -201,12 +202,12 @@
             </div>
           </li>
         </ol>
-        <button class="slider-button-right link-states" type="button">
+        <button class="slider-button-right link-states swiper-button-next" type="button">
           <span class="visually-hidden">Стрелка вперед.</span>
         </button>
 
         <!-- Dot -->
-        <div class="container-dot">
+        <div class="container-dot swiper-pagination">
           <button class="dot dot-active dot-states" type="button">
             <span class="visually-hidden">Cлайдер.</span>
           </button>
@@ -247,25 +248,27 @@
 
     <!-- Наши услуги -->
     <div class="services">
-      <section class="page-container services-content">
+      <section class="page-container services-content tabs">
         <div class="container-services">
 
           <!-- Tab -->
-          <button class="services-button-active" type="button">Доставка</button>
-          <button class="services-button" type="button">Гарантия</button>
-          <button class="services-button" type="button">Кредит</button>
+          <div class="tabs-head">
+            <button class="services-button services-button-ligth services-button-active" type="button" data-tabs-path="delivery">Доставка</button>
+            <button class="services-button" type="button" data-tabs-path="guarantee">Гарантия</button>
+            <button class="services-button" type="button" data-tabs-path="credit">Кредит</button>
+          </div>
 
           <!-- Контент услуг -->
-          <div class="container-inner">
-            <div class="services-text services-text-one">
+          <div class="container-inner tabs-content">
+            <div class="services-text services-text-active services-text-one tabs__panel" data-tabs-target="delivery">
               <h3 class="services-title title">Доставка</h3>
               <p class="about-text">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
             </div>
-            <div class="services-text services-text-two visually-hidden">
+            <div class="services-text services-text-two tabs__panel" data-tabs-target="guarantee">
               <h3 class="services-title title">Гарантия</h3>
               <p class="about-text">Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
             </div>
-            <div class="services-text services-text-three visually-hidden">
+            <div class="services-text services-text-three tabs__panel" data-tabs-target="credit">
               <h3 class="services-title title">Кредит</h3>
               <p class="about-text">Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для банка, разумеется.</p>
             </div>
@@ -445,5 +448,7 @@
       </form>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="./index.js"></script>
 </body>
 </html>
