@@ -12,6 +12,9 @@ var swiper = new Swiper(".swiper", {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  // Табы
+
   const tabs = document.querySelector('.tabs');
   const tabsBtn = document.querySelectorAll('.services-button');
   const tabsContent = document.querySelectorAll('.services-text');
@@ -35,4 +38,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector(`[data-tabs-target="${path}"]`).classList.add('services-text-active');
   };
+
+  // Модальное окно
+
+  const modal = document.querySelector('.modal');
+  const openModal = document.querySelector('.modal-open');
+  const closeModal = document.querySelector('.modal-close');
+
+  openModal.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.remove('modal-holder-close');
+  })
+
+  closeModal.addEventListener('click', () => {
+    modal.classList.add('modal-holder-close');
+  })
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      modal.classList.add('modal-holder-close');
+    }
+  })
 });
